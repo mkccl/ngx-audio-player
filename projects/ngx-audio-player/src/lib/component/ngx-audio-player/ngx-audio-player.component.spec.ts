@@ -3,11 +3,6 @@ import 'hammerjs';
 import { AudioPlayerComponent } from './ngx-audio-player.component';
 
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
-import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
-import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
-import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 
 import { AudioPlayerService } from '../../service/audio-player-service/audio-player.service';
 import { SecondsToMinutesPipe } from '../../pipe/seconds-to-minutes';
@@ -32,8 +27,7 @@ export class MockService extends AudioPlayerService {
 describe('AudioPlayerComponent', () => {
   function createComponent<T>(componentType: Type<T>, extraDeclarations: Type<any>[] = []) {
     TestBed.configureTestingModule({
-      imports: [MatIconModule, MatSliderModule, MatCardModule, MatFormFieldModule, MatExpansionModule,
-        MatPaginatorModule, MatTableModule, FormsModule, NgxAudioPlayerModule],
+      imports: [MatIconModule, MatExpansionModule, FormsModule, NgxAudioPlayerModule],
       declarations: [componentType, ...extraDeclarations],
       providers: [{ provide: ElementRef, useClass: MockElementRef }, { provide: AudioPlayerService, useClass: MockService }]
     }).compileComponents();
@@ -47,12 +41,7 @@ describe('AudioPlayerComponent', () => {
   describe('Component', () => {
     beforeEach((() => {
       const MATERIAL_MODULES = [
-        MatCardModule,
         MatExpansionModule,
-        MatFormFieldModule,
-        MatPaginatorModule,
-        MatSliderModule,
-        MatTableModule
       ];
 
       TestBed.configureTestingModule({

@@ -1,9 +1,9 @@
 
 import { Component, OnInit, Input, ViewChild, Output, ElementRef, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 import { Track } from '../../model/track.model';
-import { MatLegacySlider as MatSlider } from '@angular/material/legacy-slider';
-import { MatLegacyTableDataSource as MatTableDataSource } from '@angular/material/legacy-table';
-import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
+import { MatSlider } from '@angular/material/slider';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { AudioPlayerService } from '../../service/audio-player-service/audio-player.service';
 
 class EventResponse {
@@ -47,7 +47,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
     tracks: Track[] = [];
 
     // all || one || none
-    @Input() repeat: "all" | "one" | "none" = 'all';
+    @Input() repeat: 'all' | 'one' | 'none' = 'all';
     @Input() displayTitle = true;
     @Input() displayPlaylist = true;
     @Input() displayVolumeControls = true;
@@ -158,7 +158,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
 
         this.player.nativeElement.addEventListener('playing', () => {
             this.isPlaying = true;
-            this.emitEventResponse("TrackPlaying", this.trackPlaying);
+            this.emitEventResponse('TrackPlaying', this.trackPlaying);
             this.mediaType = '';
             if (this.tracks[this.currentIndex].mediaType !== 'stream') {
                 this.duration = Math.floor(this.player.nativeElement.duration);
@@ -168,7 +168,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
         });
         this.player.nativeElement.addEventListener('pause', () => {
             this.isPlaying = false;
-            this.emitEventResponse("TrackPaused", this.trackPaused);
+            this.emitEventResponse('TrackPaused', this.trackPaused);
         });
         this.player.nativeElement.addEventListener('timeupdate', () => {
             this.currentTime = Math.floor(this.player.nativeElement.currentTime);
@@ -194,12 +194,12 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
             }
         });
         this.player.nativeElement.addEventListener('ended', () => {
-            this.emitEventResponse("TrackEnded", this.trackEnded);
+            this.emitEventResponse('TrackEnded', this.trackEnded);
         });
 
     }
     emitEventResponse(event: string, emitter: EventEmitter<EventResponse>) {
-        let eventResponse: EventResponse = new EventResponse();
+        const eventResponse: EventResponse = new EventResponse();
         eventResponse.event = event;
         eventResponse.track = this.audioPlayerService.currentTrack;
         emitter.emit(eventResponse);
@@ -360,7 +360,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
             this.currentIndex++;
         }
         this.updateCurrentTrack();
-        this.emitEventResponse("NextTrackRequested", this.nextTrackRequested);
+        this.emitEventResponse('NextTrackRequested', this.nextTrackRequested);
         this.triggerPlay();
     }
 
@@ -386,7 +386,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
             this.resetSong();
         }
         this.updateCurrentTrack();
-        this.emitEventResponse("PreviousTrackRequested", this.previousTrackRequested);
+        this.emitEventResponse('PreviousTrackRequested', this.previousTrackRequested);
         this.triggerPlay();
     }
 
@@ -397,7 +397,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
     selectTrack(index: number): void {
         this.currentIndex = index - 1;
         this.updateCurrentTrack();
-        this.emitEventResponse("TrackSelected", this.trackSelected);
+        this.emitEventResponse('TrackSelected', this.trackSelected);
         this.triggerPlay();
     }
 
