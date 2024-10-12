@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {ThemePickerModule} from '../theme-picker';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
-import {HttpClientModule} from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @Component({
   selector: 'app-navbar',
@@ -15,15 +15,8 @@ export class NavBarComponent {
 
 }
 
-@NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    RouterModule,
-    ThemePickerModule,
-  ],
-  exports: [NavBarComponent],
-  declarations: [NavBarComponent],
-  providers: [StyleManager, ThemeStorage]
-})
+@NgModule({ exports: [NavBarComponent],
+    declarations: [NavBarComponent], imports: [CommonModule,
+        RouterModule,
+        ThemePickerModule], providers: [StyleManager, ThemeStorage, provideHttpClient(withInterceptorsFromDi())] })
 export class NavBarModule {}

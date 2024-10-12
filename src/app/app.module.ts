@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './pages/home/home.component';
 import { GettingStartedComponent } from './pages/gettingstarted/gettingstarted.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgxAudioPlayerModule } from 'projects/ngx-audio-player/src/public_api';
 
 import { NavBarModule } from './shared/navbar';
@@ -26,21 +26,14 @@ export const appRoutes: Routes = [
   }
 ];
 
-@NgModule({
-  declarations: [AppComponent, HomeComponent, GettingStartedComponent],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    MatToolbarModule,
-    MatIconModule,
-    BrowserAnimationsModule,
-    NavBarModule, FooterModule,
-    NgxAudioPlayerModule,
-    RouterModule.forRoot(appRoutes, { useHash: false })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [AppComponent, HomeComponent, GettingStartedComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        MatToolbarModule,
+        MatIconModule,
+        BrowserAnimationsModule,
+        NavBarModule, FooterModule,
+        NgxAudioPlayerModule,
+        RouterModule.forRoot(appRoutes, { useHash: false })], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 
 }
