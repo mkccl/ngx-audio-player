@@ -19,9 +19,9 @@
         <h2 id="getting-started">Getting Started</h2>
         <p>NgxAudioPlayerModule needs Angular Material.<br>Make sure you have installed below
             dependencies with same or higher version than mentioned. </p>
-        <p>"@angular/core": "^12.0.0" <br>
-            "@angular/common": "^12.0.0" <br>
-            "@angular/material": "^12.0.0" <br>
+        <p>"&#64;angular/core": "^12.0.0" <br>
+            "&#64;angular/common": "^12.0.0" <br>
+            "&#64;angular/material": "^12.0.0" <br>
             "rxjs": "^6.6.0" </p>
         <p>Import <code>NgxAudioPlayerModule</code> in the root module(<code>AppModule</code>):
         </p>
@@ -30,7 +30,7 @@
                     class="hljs-keyword">from</span> <span
                     class="hljs-string">'ngx-audio-player'</span>;
 
-<span class="hljs-meta">@NgModule</span>({{'{'}}
+<span class="hljs-meta">&#64;NgModule</span>({{'{'}}
   imports: [
     <span class="hljs-comment">// ...</span>
     NgxAudioPlayerModule
@@ -247,12 +247,12 @@ onTrackSelected(event) {{'{'}}
             </thead>
             <tbody>
                 <tr>
-                    <td>@Input() playlist: Track[];</td>
+                    <td>&#64;Input() playlist: Track[];</td>
                     <td>playlist containing array of title and link</td>
                     <td>mandatory</td>
                 </tr>
                 <tr>
-                    <td>@Input()
+                    <td>&#64;Input()
                         autoPlay = false;
                     </td>
                     <td>true - if the audio needs to be played automatically</td>
@@ -264,41 +264,41 @@ onTrackSelected(event) {{'{'}}
                     </td>
                 </tr>
                 <tr>
-                    <td>@Input()
+                    <td>&#64;Input()
                         startOffset = 0;
                     </td>
                     <td>offset from start of audio file in seconds</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input()
+                    <td>&#64;Input()
                         endOffset = 0;
                     </td>
                     <td>offset from end of audio file in seconds</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() disablePositionSlider = false;</td>
+                    <td>&#64;Input() disablePositionSlider = false;</td>
                     <td>true - if the position slider needs to be disabled</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() displayRepeatControls = true;</td>
+                    <td>&#64;Input() displayRepeatControls = true;</td>
                     <td>false - if the repeat controls needs to be hidden</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() repeat: "all" | "one" | "none" = 'all';</td>
+                    <td>&#64;Input() repeat: "all" | "one" | "none" = 'all';</td>
                     <td>repeat all or one or none</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() displayVolumeControls = true;</td>
+                    <td>&#64;Input() displayVolumeControls = true;</td>
                     <td>false - if the volume controls needs to be hidden</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() displayVolumeSlider = false;</td>
+                    <td>&#64;Input() displayVolumeSlider = false;</td>
                     <td>true - if the volume slider should be shown</td>
                     <td>optional</td>
                 </tr>
@@ -308,7 +308,7 @@ onTrackSelected(event) {{'{'}}
                     </td>
                 </tr>
                 <tr>
-                    <td>@Input() displayTitle: true;</td>
+                    <td>&#64;Input() displayTitle: true;</td>
                     <td>false - if the audio title needs to be hidden</td>
                     <td>optional</td>
                 </tr>
@@ -318,27 +318,27 @@ onTrackSelected(event) {{'{'}}
                     </td>
                 </tr>
                 <tr>
-                    <td>@Input() displayPlaylist: true;</td>
+                    <td>&#64;Input() displayPlaylist: true;</td>
                     <td>false - if the playlist needs to be hidden</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() pageSizeOptions = [10, 20, 30];</td>
+                    <td>&#64;Input() pageSizeOptions = [10, 20, 30];</td>
                     <td>number of items to be displayed in the playlist</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() expanded = true;</td>
+                    <td>&#64;Input() expanded = true;</td>
                     <td>false - if the playlist needs to be minimized</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() displayArtist = false; </td>
+                    <td>&#64;Input() displayArtist = false; </td>
                     <td>true - if the artist data is to be shown</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() displayDuration = false;</td>
+                    <td>&#64;Input() displayDuration = false;</td>
                     <td>true - if the track duration is to be shown</td>
                     <td>optional</td>
                 </tr>
@@ -348,22 +348,22 @@ onTrackSelected(event) {{'{'}}
                     </td>
                 </tr>
                 <tr>
-                    <td>@Input() tableHeader = 'Playlist';</td>
+                    <td>&#64;Input() tableHeader = 'Playlist';</td>
                     <td>true - if the track duration is to be shown</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() titleHeader = 'Title';</td>
+                    <td>&#64;Input() titleHeader = 'Title';</td>
                     <td>true - if the track duration is to be shown</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() artistHeader = 'Artist';</td>
+                    <td>&#64;Input() artistHeader = 'Artist';</td>
                     <td>true - if the track duration is to be shown</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Input() durationHeader = 'Duration';</td>
+                    <td>&#64;Input() durationHeader = 'Duration';</td>
                     <td>true - if the track duration is to be shown</td>
                     <td>optional</td>
                 </tr>
@@ -373,32 +373,32 @@ onTrackSelected(event) {{'{'}}
                     </td>
                 </tr>
                 <tr>
-                    <td>@Output() trackPlaying: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() trackPlaying: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when the track starts playing</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Output() trackPaused: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() trackPaused: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when the track is paused</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Output() trackEnded: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() trackEnded: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when the track ends</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Output() nextTrackRequested: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() nextTrackRequested: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when the next track is requested</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Output() previousTrackRequested: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() previousTrackRequested: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when the previous track is requested</td>
                     <td>optional</td>
                 </tr>
                 <tr>
-                    <td>@Output() trackSelected: EventEmitter&lt;EventResponse&gt;</td>
+                    <td>&#64;Output() trackSelected: EventEmitter&lt;EventResponse&gt;</td>
                     <td>triggers when any track is selected from playlist</td>
                     <td>optional</td>
                 </tr>

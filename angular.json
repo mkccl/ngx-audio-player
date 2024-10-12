@@ -93,18 +93,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-audio-player-demo:build"
+            "buildTarget": "ngx-audio-player-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-audio-player-demo:build:production"
+              "buildTarget": "ngx-audio-player-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-audio-player-demo:build"
+            "buildTarget": "ngx-audio-player-demo:build"
           }
         },
         "test": {
